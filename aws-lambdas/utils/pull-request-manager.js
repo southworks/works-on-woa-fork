@@ -10,7 +10,7 @@ export default class PullRequestManager {
             repo: gitHubRepositoryConfig.githubRepo,
             appId: gitHubRepositoryConfig.githubAppId,
             installationId: gitHubRepositoryConfig.githubAppInstallationId,
-            privateKey: gitHubRepositoryConfig.githubAppPkBase64
+            privateKey: Buffer.from(gitHubRepositoryConfig.githubAppPkBase64 , 'base64').toString('ascii')
         });
 
         const rndInt = this.randomIntFromInterval(1009, 10007);
