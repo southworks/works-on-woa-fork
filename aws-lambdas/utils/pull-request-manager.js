@@ -8,7 +8,9 @@ export default class PullRequestManager {
         const octokitManager = new OctokitManager({
             owner: gitHubRepositoryConfig.githubOwner,
             repo: gitHubRepositoryConfig.githubRepo,
-            accessToken: gitHubRepositoryConfig.githubToken
+            appId: gitHubRepositoryConfig.githubAppId,
+            installationId: gitHubRepositoryConfig.githubAppInstallationId,
+            privateKey: gitHubRepositoryConfig.githubAppPkBase64
         });
 
         const rndInt = this.randomIntFromInterval(1009, 10007);

@@ -17,7 +17,7 @@ export const handler = async (event) => {
     
     try {
         const formData = JSON.parse(event.body);
-        
+
         const refererError = RequestValidator.validateReferer(event.headers, process.env['ALLOWED_REFERER']);
         if(!refererError) config = await configManager.loadConfig(FileType.Game);
         const validationError = refererError === "" ? await RequestValidator.validateRequest(formData, FileType.Game, config.recaptchaV2VerifyUrl, config.recaptchaV2SecretKey) : 'Access forbidden';
@@ -30,7 +30,9 @@ export const handler = async (event) => {
         await pullRequestManager.createPullRequest(
             formData,
             {
-                githubToken: config.githubToken,
+                githubAppId: config.githubAppId,
+                githubAppInstallationId: config.githubAppInstallationId,
+                githubAppPkBase64: config.githubAppPkBase64,
                 githubOwner: config.githubOwner,
                 githubRepo: config.githubRepo,
                 githubBaseBranch: config.githubBaseBranch

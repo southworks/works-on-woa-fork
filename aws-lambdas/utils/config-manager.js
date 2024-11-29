@@ -9,7 +9,7 @@ export default class ConfigManager {
     async loadConfig(fileType) {
         if (this.config) return this.config;
 
-        const baseConfigKeys = ["githubToken", "githubOwner", "githubRepo", "githubBaseBranch", "recaptchaV2VerifyUrl", "recaptchaV2SecretKey"];
+        const baseConfigKeys = ["githubAppId", "githubAppInstallationId", "githubAppPkBase64", "githubOwner", "githubRepo", "githubBaseBranch", "recaptchaV2VerifyUrl", "recaptchaV2SecretKey"];
         const appSpecificKeys = ["sendgridApiKey", "senderEmail", "recipientEmail"];
 
         let requiredKeys;
@@ -46,7 +46,7 @@ export default class ConfigManager {
     }
 
     async loadSecrets(missingKeys) {
-        const keysRequiringSecrets = ["sendgridApiKey", "githubToken", "recaptchaV2SecretKey"];
+        const keysRequiringSecrets = ["sendgridApiKey", "recaptchaV2SecretKey", "githubAppPkBase64"];
         const secretsToFetch = missingKeys.filter(key => keysRequiringSecrets.includes(key));
 
         if (secretsToFetch.length === 0) return;

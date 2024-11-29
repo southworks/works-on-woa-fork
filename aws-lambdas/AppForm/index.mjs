@@ -58,7 +58,9 @@ const handleTestingRequest = async (data) => {
 const handleSubmitOrUpdateRequest = async (data) => {
     const pullRequestManager = new PullRequestManager();
     await pullRequestManager.createPullRequest(data, {
-        githubToken: config.githubToken,
+        githubAppId: config.githubAppId,
+        githubAppInstallationId: config.githubAppInstallationId,
+        githubAppPkBase64: config.githubAppPkBase64,
         githubOwner: config.githubOwner,
         githubRepo: config.githubRepo,
         githubBaseBranch: config.githubBaseBranch
