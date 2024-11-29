@@ -12,19 +12,23 @@ export default class PullRequestDataGenerator {
         const appFormData = params.formData;
         const gameFormData = params.formData;
         const name = params.formData.name;
-        const nameUnderscore = name.trim().replace(/\s/g, '_');
-        const nameHyphen = name.trim().replace(/\s/g, '-');
+        const publisher = params.formData.publisher;
+        const nameAlphanumeric = name.replace(/[^a-zA-Z0-9\s]/g,'');
+        const nameUnderscore = nameAlphanumeric.trim().replace(/\s/g, '_');
+        const nameHyphen = nameAlphanumeric.trim().replace(/\s/g, '-');
         const type = fileType.toLowerCase();
 
         formattedData.commitMessage = this.templateData.commitMessageTemplate(name);
         formattedData.fileContent = fileType === FileType.Application
             ? this.getFileContentForApps(appFormData)
             : this.getFileContentForGames(gameFormData);
-        formattedData.filePath = this.templateData.applicationFilePathTemplate(nameUnderscore);
+        formattedData.filePath = fileType === FileType.Application
+            ? this.templateData.applicationFilePathTemplate(nameUnderscore)
+            : this.templateData.gameFilePathTemplate(nameUnderscore)
         formattedData.headBaseBranchName = this.templateData.headBaseBranchTemplate(params.baseBranchName);
         formattedData.newBranchName = this.templateData.newBranchNameTemplate(nameHyphen, type, params.randomNumber);
         formattedData.newBranchRefName = this.templateData.newBranchRefNameTemplate(formattedData.newBranchName);
-        formattedData.pullRequestBody = this.templateData.pullRequestBodyTemplate(name, type);
+        formattedData.pullRequestBody = this.templateData.pullRequestBodyTemplate(name, type, publisher);
         formattedData.pullRequestTitle = this.templateData.pullRequestTitleTemplate(name, type);
 
         return formattedData;

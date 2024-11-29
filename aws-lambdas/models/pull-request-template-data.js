@@ -8,7 +8,7 @@ export const pullRequestTemplateData = {
     headBaseBranchTemplate: template`heads/${0}`,
     newBranchNameTemplate: template`feat/add-${0}-${1}-file-${2}`, // ex: feat/add-outlook-application-file-1234
     newBranchRefNameTemplate: template`refs/heads/${0}`,
-    pullRequestBodyTemplate: template`Incoming changes:\n- Add file for ${0} ${1}\n\n**NOTE**: this Pull Request has been automatically generated.`,
+    pullRequestBodyTemplate: template`Incoming changes:\n- Add file for ${0} ${1} from ${2}\n- This data corresponds to a new ${1}\n\n**NOTE**: this Pull Request has been automatically generated.`,
     pullRequestTitleTemplate: template`[Feature] Add file for ${0} ${1}`, // ex: [Feature] Add file for Outlook Application
 };
 
