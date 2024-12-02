@@ -67,13 +67,10 @@ jobs:
 
       - name: Build and deploy
         env:
-              SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
               GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
               GITHUB_BASE_BRANCH: ${{ vars.GH_BASE_BRANCH }}
               GITHUB_OWNER: ${{ vars.GH_OWNER }}
               GITHUB_REPO: ${{ vars.GH_REPO }}
-              SENDER_EMAIL: ${{ vars.SENDER_EMAIL }}
-              RECIPIENT_EMAIL: ${{ vars.RECIPIENT_EMAIL }}
               RECAPTCHA_V2_VERIFY_URL: ${{ vars.PUBLIC_CAPTCHA_WEB_SITE_KEY }}
               RECAPTCHA_V2_SECRET_KEY: ${{ secrets.RECAPTCHA_V2_SECRET_KEY }}
         run: |

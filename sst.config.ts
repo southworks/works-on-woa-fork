@@ -54,9 +54,6 @@ export default {
       }
 
       const lambdaEnvVars = {
-        SENDGRID_API_KEY: process.env.SENDGRID_API_KEY!,
-        SENDER_EMAIL: process.env.SENDER_EMAIL!,
-        RECIPIENT_EMAIL: process.env.RECIPIENT_EMAIL!,
         GITHUB_TOKEN: process.env.GITHUB_TOKEN!,
         GITHUB_OWNER: process.env.GITHUB_OWNER!,
         GITHUB_REPO: process.env.GITHUB_REPO!,
