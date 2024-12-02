@@ -41,8 +41,6 @@ export default class ConfigManager {
                 missingEnvVars.push(key);
             }
         });
-
-        await this.loadSecrets(missingEnvVars);
     }
 
     async loadSecrets(missingKeys) {
