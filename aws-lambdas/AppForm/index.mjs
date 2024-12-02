@@ -50,10 +50,6 @@ export const handler = async (event) => {
 };
 
 const handleTestingRequest = async (data) => {
-    // const emailManager = new EmailManager(config.sendgridApiKey, config.senderEmail, config.recipientEmail);
-    // console.log(`Sending email to test the application ${data.name}...`);
-    // await emailManager.sendEmail(`[Request for testing app] - ${data.name}`, emailManager.generateAppTestEmailContent(data.name, data.publisher));
-    // console.log(`Email for testing application ${data.name} successfully sent`);
     const issueManager = new IssueManager();
     console.log(`Creating Issue for ${data.name} from ${data.publisher}.`);
     await issueManager.createIssue(data, {
