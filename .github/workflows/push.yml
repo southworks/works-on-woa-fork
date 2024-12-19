@@ -108,11 +108,8 @@ jobs:
           sudo ./aws/install --update
           cp -R .aws ~/
           pipx run pipenv install
-          # Build & deploy
-          if [[ "${{ github.ref_name }}" == "staging" ]]; then
-            export STAGE="dev"
-          fi
-          if [[ "${{ github.ref_name }}" == "main" ]]; then
-            export STAGE="main"
-          fi
+          # Default stage to "dev" or set explicitly
+          export STAGE="dev"  # or "main" if you'd like to default to production
+          echo "Deploying with stage: $STAGE"
+          # Always deploy
           yarn sst deploy --stage $STAGE
