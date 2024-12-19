@@ -46,6 +46,13 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
       
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      
       - name: Install Lambda dependencies
         run: |
           npm install
@@ -101,7 +108,6 @@ jobs:
           sudo ./aws/install --update
           cp -R .aws ~/
           pipx run pipenv install
-          $(pipx run pipenv run python ./get_aws_creds.py -i ${{ secrets.VAULT_ROLE_ID }} -s ${{ secrets.VAULT_SECRET_ID }} -r ${{ secrets.VAULT_ROLE }} 2>&1 | tee /dev/stderr)
           # Build & deploy
           if [[ "${{ github.ref_name }}" == "staging" ]]; then
             export STAGE="dev"
