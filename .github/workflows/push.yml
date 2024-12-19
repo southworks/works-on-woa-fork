@@ -71,6 +71,11 @@ jobs:
           shopt -s extglob
           cp -r !(AppForm|GameForm) GameForm/
         working-directory: aws-lambdas
+      
+      - name: Build Astro site
+        run: |
+          yarn install
+          yarn astro build
 
       - name: Build and deploy
         env:
