@@ -73,6 +73,10 @@ jobs:
         working-directory: aws-lambdas
       
       - name: Build Astro site
+        env:
+          PUBLIC_API_HOST: ${{ vars.PUBLIC_API_HOST }}
+          PUBLIC_APPLICATION_API_ENDPOINT: ${{ vars.PUBLIC_APPLICATION_API_ENDPOINT }}
+          PUBLIC_GAME_API_ENDPOINT: ${{ vars.PUBLIC_GAME_API_ENDPOINT }}
         run: |
           yarn install
           yarn astro build
