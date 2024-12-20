@@ -105,6 +105,9 @@ jobs:
           export CUSTOM_DOMAIN=${{ vars.CUSTOM_DOMAIN }}
           export HOSTED_ZONE=${{ vars.HOSTED_ZONE }}
           export IS_PUBLIC=${{ vars.IS_PUBLIC }}
+          export PUBLIC_API_HOST=${{ vars.PUBLIC_API_HOST }}
+          export PUBLIC_APPLICATION_API_ENDPOINT=${{ vars.PUBLIC_APPLICATION_API_ENDPOINT }}
+          export PUBLIC_GAME_API_ENDPOINT=${{ vars.PUBLIC_GAME_API_ENDPOINT }}
           # Set up yarn
           yarn install
           # Set up AWS CLI & credentials
