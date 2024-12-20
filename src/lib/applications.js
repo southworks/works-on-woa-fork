@@ -52,6 +52,7 @@ form.addEventListener("submit", (e) => {
     //     }, 3000);
     // } else 
     {
+        console.log(`THIS IS THE ENV VAR ${import.meta.env.PUBLIC_API_HOST}`)
         var data = new FormData(form)
         fetch(`${import.meta.env.PUBLIC_API_HOST}${import.meta.env.PUBLIC_APPLICATION_API_ENDPOINT}`, {
             method: "POST",
