@@ -27,7 +27,7 @@ export default {
         customDomain: cd,
         environment: {
           IS_PUBLIC: "true",
-          PUBLIC_API_HOST: "google.com",
+          PUBLIC_API_HOST: "https://www.google.com",
           PUBLIC_APPLICATION_API_ENDPOINT: process.env.PUBLIC_APPLICATION_API_ENDPOINT!,
           PUBLIC_GAME_API_ENDPOINT: process.env.PUBLIC_GAME_API_ENDPOINT!,
           PUBLIC_CAPTCHA_WEB_SITE_KEY: process.env.PUBLIC_CAPTCHA_WEB_SITE_KEY!
