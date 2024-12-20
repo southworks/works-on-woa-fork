@@ -46,6 +46,13 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
       
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      
       - name: Install Lambda dependencies
         run: |
           npm install
@@ -64,6 +71,15 @@ jobs:
           shopt -s extglob
           cp -r !(AppForm|GameForm) GameForm/
         working-directory: aws-lambdas
+      
+      - name: Build Astro site
+        env:
+          PUBLIC_API_HOST: ${{ vars.PUBLIC_API_HOST }}
+          PUBLIC_APPLICATION_API_ENDPOINT: ${{ vars.PUBLIC_APPLICATION_API_ENDPOINT }}
+          PUBLIC_GAME_API_ENDPOINT: ${{ vars.PUBLIC_GAME_API_ENDPOINT }}
+        run: |
+          yarn install
+          yarn astro build
 
       - name: Build and deploy
         env:
@@ -73,7 +89,7 @@ jobs:
               GITHUB_BASE_BRANCH: ${{ vars.GH_BASE_BRANCH }}
               GITHUB_OWNER: ${{ vars.GH_OWNER }}
               GITHUB_REPO: ${{ vars.GH_REPO }}
-              RECAPTCHA_V2_VERIFY_URL: ${{ vars.PUBLIC_CAPTCHA_WEB_SITE_KEY }}
+              RECAPTCHA_V2_VERIFY_URL: ${{ vars.RECAPTCHA_V2_VERIFY_URL }}
               RECAPTCHA_V2_SECRET_KEY: ${{ secrets.RECAPTCHA_V2_SECRET_KEY }}
         run: |
           # Set up the environment variables
@@ -89,6 +105,9 @@ jobs:
           export CUSTOM_DOMAIN=${{ vars.CUSTOM_DOMAIN }}
           export HOSTED_ZONE=${{ vars.HOSTED_ZONE }}
           export IS_PUBLIC=${{ vars.IS_PUBLIC }}
+          export PUBLIC_API_HOST=${{ vars.PUBLIC_API_HOST }}
+          export PUBLIC_APPLICATION_API_ENDPOINT=${{ vars.PUBLIC_APPLICATION_API_ENDPOINT }}
+          export PUBLIC_GAME_API_ENDPOINT=${{ vars.PUBLIC_GAME_API_ENDPOINT }}
           # Set up yarn
           yarn install
           # Set up AWS CLI & credentials
@@ -98,12 +117,8 @@ jobs:
           sudo ./aws/install --update
           cp -R .aws ~/
           pipx run pipenv install
-          $(pipx run pipenv run python ./get_aws_creds.py -i ${{ secrets.VAULT_ROLE_ID }} -s ${{ secrets.VAULT_SECRET_ID }} -r ${{ secrets.VAULT_ROLE }} 2>&1 | tee /dev/stderr)
-          # Build & deploy
-          if [[ "${{ github.ref_name }}" == "staging" ]]; then
-            export STAGE="dev"
-          fi
-          if [[ "${{ github.ref_name }}" == "main" ]]; then
-            export STAGE="main"
-          fi
+          # Default stage to "dev" or set explicitly
+          export STAGE="dev"  # or "main" if you'd like to default to production
+          echo "Deploying with stage: $STAGE"
+          # Always deploy
           yarn sst deploy --stage $STAGE

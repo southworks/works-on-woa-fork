@@ -27,6 +27,10 @@ export default {
         customDomain: cd,
         environment: {
           IS_PUBLIC: "true",
+          PUBLIC_API_HOST: "https://www.google.com",
+          PUBLIC_APPLICATION_API_ENDPOINT: process.env.PUBLIC_APPLICATION_API_ENDPOINT!,
+          PUBLIC_GAME_API_ENDPOINT: process.env.PUBLIC_GAME_API_ENDPOINT!,
+          PUBLIC_CAPTCHA_WEB_SITE_KEY: process.env.PUBLIC_CAPTCHA_WEB_SITE_KEY!
         },
         cdk: {
           distribution: {
@@ -71,8 +75,8 @@ export default {
         GITHUB_OWNER: process.env.GITHUB_OWNER!,
         GITHUB_REPO: process.env.GITHUB_REPO!,
         GITHUB_BASE_BRANCH: process.env.GITHUB_BASE_BRANCH!,
-        RECAPTCHA_VERIFY_URL: process.env.RECAPTCHA_VERIFY_URL!,
-        RECAPTCHA_SECRET_KEY: process.env.RECAPTCHA_SECRET_KEY!,
+        RECAPTCHA_V2_VERIFY_URL: process.env.RECAPTCHA_V2_VERIFY_URL!,
+        RECAPTCHA_V2_SECRET_KEY: process.env.RECAPTCHA_V2_SECRET_KEY!,
       };
 
       const appFormFunction = new Function(stack, "ProcessAppFormSubmissions", {
