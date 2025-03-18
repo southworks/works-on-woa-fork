@@ -44,7 +44,8 @@ export default class PullRequestDataGenerator {
             appData.displayedArmCompatibility ?? noInfo,
             appData.compatibleVersionNumber ?? noInfo,
             appData.urlForDownload ?? noInfo,
-            appData.iconUrl ?? noInfo
+            appData.iconUrl ?? noInfo,
+            appData.notes
         );
     }
 
@@ -67,7 +68,8 @@ export default class PullRequestDataGenerator {
             gameData.dateTasted ?? noInfo,
             gameData.osVersion ?? noInfo,
             gameData.driverId ?? noInfo,
-            subTemplate
+            subTemplate,
+            gameData.notes
         );
     }
 }

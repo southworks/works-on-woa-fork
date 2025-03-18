@@ -44,7 +44,8 @@
     "download": "다운로드",
     "report_last_updated": "보고서 마지막 업데이트",
     "website": "웹사이트",
-    "more_info": "추가 정보"
+    "more_info": "추가 정보",
+    "notes": "노트"
   },
   "games": {
     "search_placeholder": "게임 검색",
@@ -92,7 +93,8 @@
 	},
     "submit_button": "제출",
     "submit_succeeded": "애플리케이션 양식이 성공적으로 제출되었습니다. 협조해 주셔서 감사합니다!",
-    "submit_failed": "오류가 발생했습니다!"
+    "submit_failed": "오류가 발생했습니다!",
+    "notes": "노트"
   },
   "game_form": {
 	  "title": "게임 요청 폼",
@@ -121,7 +123,8 @@
     "your_name_gamertag": "이름/게이머 태그",
     "submit_button": "제출",
     "submit_succeeded": "게임 폼이 성공적으로 제출되었습니다. 협조해 주셔서 감사합니다!",
-    "submit_failed": "오류가 발생했습니다!"
+    "submit_failed": "오류가 발생했습니다!",
+    "notes": "노트"
   },
   "application_filters": {
     "category": "카테고리"

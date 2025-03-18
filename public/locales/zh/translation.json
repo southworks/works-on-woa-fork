@@ -44,7 +44,8 @@
     "download": "下载",
     "report_last_updated": "报告最后更新",
     "website": "网站",
-    "more_info": "更多信息"
+    "more_info": "更多信息",
+    "notes": "备注"
   },
   "games": {
     "search_placeholder": "搜索游戏",
@@ -92,7 +93,8 @@
 	},
     "submit_button": "提交",
     "submit_succeeded": "应用表单已成功提交，谢谢您的协作！",
-    "submit_failed": "发生错误！"
+    "submit_failed": "发生错误！",
+    "notes": "备注"
   },
   "game_form": {
 	"title": "游戏请求表格",
@@ -121,7 +123,8 @@
     "your_name_gamertag": "您的名字/玩家标签",
     "submit_button": "提交",
     "submit_succeeded": "游戏表单成功提交，谢谢您的合作！",
-    "submit_failed": "发生错误！"
+    "submit_failed": "发生错误！",
+    "notes": "备注"
   },
   "application_filters": {
     "category": "类别"

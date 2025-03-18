@@ -129,9 +129,13 @@ const locale = updateLanguage(Astro.url);
       <label class="block text-font-color text-lg mb-1" for="auto_super_res_boost">{t('game_form.auto_super_resolution_fps_bost')}</label>
       <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="auto_super_res_boost" id="auto_super_res_boost" />
     </div>
-    <div class="mb-12">
+    <div class="mb-6">
       <label class="block text-font-color text-lg mb-1" for="gamertag">{t('game_form.your_name_gamertag')}</label>
       <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="gamertag" id="gamertag" />
+    </div>
+    <div class="mb-12">
+        <label class="block text-font-color text-lg mb-1" for="notes">{t('game_form.notes')}</label>
+        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="5" name="notes" id="notes" placeholder={t('game_form.notes')}  />
     </div>
     <div class="mb-12">
       <input type="submit" value={t('game_form.submit_button')}  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"></input>

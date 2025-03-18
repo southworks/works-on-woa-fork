@@ -39,7 +39,8 @@ form.addEventListener("submit", (e) => {
                 "compatibilityDetails": data.get("compatibility_details") ?? "",
                 "autoSuperResCompatibility": data.get("asrc") ?? "",
                 "autoSuperResFPSboost": data.get("auto_super_res_boost") ?? "",
-                "nameOrGamerTag": data.get("gamertag") ?? ""
+                "nameOrGamerTag": data.get("gamertag") ?? "",
+                "notes": data.get("notes") ?? ""
             }),
             headers: {
                 "Content-Type": "application/json",

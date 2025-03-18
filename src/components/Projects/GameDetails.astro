@@ -169,15 +169,11 @@ const t_compatibility = t(`game_compatibility_values.${compatibility}`);
         </li>
       )
     }
-    {
-      (
-        <li class="project-notes basis-full">
-          <b data-pagefind-ignore>{t('games.notes')}</b>
-          <div class="note-container">
-            <Content />
-          </div>
-        </li>
-      )
-    }
+    <li class="project-notes basis-full"> 
+      <b data-pagefind-ignore>{t("games.notes")}</b>
+      <div class="note-container">
+        <Content />
+      </div>
+    </li>
   </ul>
 </div>

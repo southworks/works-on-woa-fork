@@ -135,14 +135,10 @@ const locale = updateLanguage(Astro.url);
         );
     }
   }
-  {
-    (
-      <li class="project-notes basis-full">
-        <b data-pagefind-ignore>Notes</b>
-        <div class="note-container">
-          <Content />
-        </div>
-      </li>
-    )
-  }
+  <li class="project-notes basis-full"> 
+    <b data-pagefind-ignore>{t("applications.notes")}</b>
+    <div class="note-container">
+      <Content />
+    </div>
+  </li>
 </ul>

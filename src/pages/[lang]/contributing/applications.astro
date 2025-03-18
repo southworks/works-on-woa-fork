@@ -126,9 +126,13 @@ const locale = updateLanguage(Astro.url);
             <input class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" type="radio" id="exec_compt_unknown" name="exec_compatibility" value="unknown">
             <label class="ms-2 text-lg" for="exec_compt_unknown">Unknown</label><br>
         </div>
-        <div class="reportInfo mb-12">
+        <div class="reportInfo mb-6">
             <label class="block text-font-color text-lg mb-1" for="icon_url">{t('application_form.icon.description')}</label>
             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="icon_url" id="icon_url" placeholder={t('application_form.icon.instruction')} />
+        </div>
+        <div class="reportInfo mb-12">
+            <label class="block text-font-color text-lg mb-1" for="notes">{t('application_form.notes')}</label>
+            <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="5" name="notes" id="notes" placeholder={t('application_form.notes')}  />
         </div>
         <div class="mb-12">
             <input type="submit" value={t('application_form.submit_button')} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"></input>

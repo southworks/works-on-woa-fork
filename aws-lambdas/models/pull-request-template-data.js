@@ -1,8 +1,8 @@
 export const pullRequestTemplateData = {
-    applicationFileContentTemplate: template`---\nname: ${0}\ncategories: [${1}]\ncompatibility: ${2}\ndisplay_result: ${3}\nversion_from: ${4}\nlink: ${5}\nicon: ${6}\n---`,
+    applicationFileContentTemplate: template`---\nname: ${0}\ncategories: [${1}]\ncompatibility: ${2}\ndisplay_result: ${3}\nversion_from: ${4}\nlink: ${5}\nicon: ${6}\n---\n${7}`,
     applicationFilePathTemplate: template`src/content/applications/${0}.md`,
     commitMessageTemplate: template`Add ${0}.md file`,
-    gameFileContentTemplate: template`---\nname: ${0}\ncategories: [${1}]\npublisher: ${2}\ncompatibility: ${3}\ncompatibility_details: ${4}\ndevice_configuration: ${5}\ndate_tested: ${6}\nos_version: ${7}\ndriver_id: ${8}${9}\n---`,
+    gameFileContentTemplate: template`---\nname: ${0}\ncategories: [${1}]\npublisher: ${2}\ncompatibility: ${3}\ncompatibility_details: ${4}\ndevice_configuration: ${5}\ndate_tested: ${6}\nos_version: ${7}\ndriver_id: ${8}${9}\n---\n${10}`,
     gameFileSubContentTemplate: template`\nauto_super_resolution:\n\tcompatibility: ${0}\n\tfps boost: ${1}`,
     gameFilePathTemplate: template`src/content/games/${0}.md`,
     headBaseBranchTemplate: template`heads/${0}`,

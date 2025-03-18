@@ -44,7 +44,8 @@
     "download": "Download",
     "report_last_updated": "Report last updated",
     "website": "Website",
-    "more_info": "More Info"
+    "more_info": "More Info",
+	"notes": "Notes"
   },
   "games": {
     "search_placeholder": "Search for games",
@@ -92,7 +93,8 @@
     },
     "submit_button": "Submit",
     "submit_succeeded": "Application form successfully sent, thanks for your collaboration!",
-    "submit_failed": "An error occurred!"
+    "submit_failed": "An error occurred!",
+    "notes": "Notes"
   },
   "game_form": {
     "title": "Game request form",
@@ -121,7 +123,8 @@
     "your_name_gamertag": "Your name/gamertag",
     "submit_button": "Submit",
     "submit_succeeded": "Game form successfully sent, thanks for your collaboration!",
-    "submit_failed": "An error occurred!"
+    "submit_failed": "An error occurred!",
+    "notes": "Notes"
   },
   "application_filters": {
     "category": "Category"

@@ -66,7 +66,8 @@ form.addEventListener("submit", (e) => {
                 "displayedArmCompatibility": data.get("arm_compatibility") ?? "",
                 "compatibleVersionNumber": data.get("earliest_compt_version") ?? "",
                 "executionCompatibility": data.get("exec_compatibility") ?? "",
-                "iconUrl": data.get("icon_url") ?? ""
+                "iconUrl": data.get("icon_url") ?? "",
+                "notes": data.get("notes") ?? ""
             }),
             headers: {
                 "Content-Type": "application/json",

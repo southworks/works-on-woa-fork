@@ -44,7 +44,8 @@
     "download": "ダウンロード",
     "report_last_updated": "レポートの最終更新日",
     "website": "ウェブサイト",
-    "more_info": "詳細情報"
+    "more_info": "詳細情報",
+    "notes": "備考"
   },
   "games": {
     "search_placeholder": "ゲームを検索",
@@ -92,7 +93,8 @@
 	},
     "submit_button": "送信",
     "submit_succeeded": "アプリケーションフォームが正常に送信されました。ご協力ありがとうございます！",
-    "submit_failed": "エラーが発生しました！"
+    "submit_failed": "エラーが発生しました！",
+    "notes": "備考"
   },
   "game_form": {
     "title": "ゲームリクエストフォーム",
@@ -121,7 +123,8 @@
     "your_name_gamertag": "あなたの名前/ゲーマータグ",
     "submit_button": "送信",
     "submit_succeeded": "ゲームフォームが正常に送信されました。ご協力ありがとうございます！",
-    "submit_failed": "エラーが発生しました！"
+    "submit_failed": "エラーが発生しました！",
+    "notes": "備考"
   },
   "application_filters": {
     "category": "カテゴリー"
