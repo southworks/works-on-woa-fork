@@ -44,7 +44,9 @@
     "download": "Download",
     "report_last_updated": "Report last updated",
     "website": "Website",
-    "more_info": "More Info"
+	"notes": "Notes",
+    "emulation": "Emulated",
+    "native": "Arm Native"
   },
   "games": {
     "search_placeholder": "Search for games",

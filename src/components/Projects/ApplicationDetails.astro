@@ -39,33 +39,48 @@ const locale = updateLanguage(Astro.url);
     class:list={["font-bold text-2xl md:text-center px-4 rounded-xl"]}
     data-pagefind-filter={`compatibility:${data.display_result}`}
   >
-    {
-      () => {
-        if (!data.display_result) return;
-        if (
-          ["Compatible", "Compatible via Web Browser"].includes(data.display_result)
-        ) { 
+    <div class="flex justify-end">
+      {
+        () => {
+          if (!data.display_result) return;
+          if (
+            ["Compatible", "Compatible via Web Browser"].includes(
+              data.display_result,
+            )
+          ) {
+            return (
+              <p class="text-green-500 flex items-center text-xl md:text-3xl justify-end pr-8">
+                <span class="text-2xl md:text-5xl pr-2 md:pr-4">✓</span>{" "}
+                {t(`application_display_result.${data.display_result}`)}
+              </p>
+            );
+          }
+          if (data.display_result === "Vendor Announced - Launching Soon") {
+            return (
+              <p class="text-green-500 flex items-center text-xl md:text-3xl justify-end pr-8">
+                {t(`application_display_result.${data.display_result}`)}
+              </p>
+            );
+          }
           return (
-            <p class="text-green-500 flex items-center text-xl md:text-3xl justify-end w-full pr-8">
-              <span class="text-2xl md:text-5xl pr-2 md:pr-4">✓</span>{" "}
+            <p class="text-red-500 flex items-center text-xl md:text-3xl justify-end pr-8">
               {t(`application_display_result.${data.display_result}`)}
             </p>
           );
         }
-        if (data.display_result === "Vendor Announced - Launching Soon") {
-          return (
-            <p class="text-green-500 flex items-center text-xl md:text-3xl justify-end w-full pr-8">
-              {t(`application_display_result.${data.display_result}`)}
-            </p>
-          );
-        }
-        return (
-          <p class="text-red-500 flex items-center text-xl md:text-3xl justify-end w-full pr-8">
-            {t(`application_display_result.${data.display_result}`)}
-          </p>
-        );
       }
-    }
+      {
+        compatibility == "native" || compatibility == "emulation" ? (
+          <p class:list={[
+            "flex items-center text-xl md:text-3xl justify-end pr-8",
+            compatibility == "native" ? "text-blue-500" : "text-orange-500"
+          ]}>
+            <span class="text-2xl md:text-5xl pr-2 md:pr-4">•</span>{" "}
+            {t(`applications.${compatibility}`)}
+          </p>
+        ) : null
+      }
+    </div>
   </p>
 </div>
 

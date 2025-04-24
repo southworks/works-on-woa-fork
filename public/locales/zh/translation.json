@@ -44,7 +44,9 @@
     "download": "下载",
     "report_last_updated": "报告最后更新",
     "website": "网站",
-    "more_info": "更多信息"
+    "notes": "备注",
+    "emulation": "模拟的",
+    "native": "原生 ARM"
   },
   "games": {
     "search_placeholder": "搜索游戏",

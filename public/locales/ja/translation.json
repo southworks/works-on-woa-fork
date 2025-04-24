@@ -44,7 +44,9 @@
     "download": "ダウンロード",
     "report_last_updated": "レポートの最終更新日",
     "website": "ウェブサイト",
-    "more_info": "詳細情報"
+    "notes": "備考",
+    "emulation": "エミュレートされた",
+    "native": "アームネイティブ"
   },
   "games": {
     "search_placeholder": "ゲームを検索",

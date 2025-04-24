@@ -44,7 +44,9 @@
     "download": "다운로드",
     "report_last_updated": "보고서 마지막 업데이트",
     "website": "웹사이트",
-    "more_info": "추가 정보"
+    "notes": "노트",
+    "emulation": "에뮬레이션된",
+    "native": "ARM 네이티브"
   },
   "games": {
     "search_placeholder": "게임 검색",
